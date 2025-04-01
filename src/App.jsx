@@ -1,9 +1,13 @@
-import { useState } from 'react'
+import { createElement, use, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function Weather() {
+  const [currentTemp, setCurrentTemp] = useState("");
+  const [highTemp, setHighTemp] = useState("");
+  const [lowTemp, setLowTemp] = useState("");
+
   let info = [];
   const options = {
     method: 'GET',
@@ -13,25 +17,35 @@ function Weather() {
     }
   };
   
-  async function getWeather(){
+  async function getCurrentWeather(){
     await fetch('https://weatherapi-com.p.rapidapi.com/current.json?q=43.119%2C-85.559', options)
     .then(response => response.json())
       .then((response) => {
-        info.push(response.current.feelslike_f + '°F');
-        info.push(response.location.localtime);
+        setCurrentTemp(response.current.temp_f + '°F');
     })
     .catch(err => console.error(err));
   }
-  getWeather();
 
-  const listWeather = info.map(data =>
-    <li>{data}</li>
-  );
+  async function getForecastWeather(){
+    await fetch('https://weatherapi-com.p.rapidapi.com/forecast.json?q=43.119%2C-85.559&days=3', options)
+    .then(response => response.json())
+      .then((response) => {
+        setHighTemp(response.forecast.forecastday[0].day.maxtemp_f + '°F');
+        setLowTemp(response.forecast.forecastday[0].day.mintemp_f + '°F');
+    })
+    .catch(err => console.error(err));
+  }
+
+  getCurrentWeather();
+  getForecastWeather();
+
 
   return (
     <div>
-      <ul>
-        {listWeather}
+      <ul id='weather_list'>
+        <li>{currentTemp}</li>
+        <li>{highTemp}</li>
+        <li>{lowTemp}</li>
       </ul>
     </div>
   );
