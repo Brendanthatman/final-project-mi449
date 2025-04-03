@@ -1,15 +1,15 @@
-import { createElement, use, useState } from 'react'
+import { createElement, use, useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
 function Weather() {
-  const [currentTemp, setCurrentTemp] = useState("");
-  const [highTemp, setHighTemp] = useState("");
-  const [lowTemp, setLowTemp] = useState("");
+  const [currentTemp, setCurrentTemp] = useState("Loading");
+  const [highTemp, setHighTemp] = useState("Loading");
+  const [lowTemp, setLowTemp] = useState("Loading");
 
   let info = [];
-  const options = {
+  /**const options = {
     method: 'GET',
     headers: {
       'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
@@ -37,7 +37,7 @@ function Weather() {
   }
 
   getCurrentWeather();
-  getForecastWeather();
+  getForecastWeather();**/
 
 
   return (
@@ -51,13 +51,56 @@ function Weather() {
   );
 }
 
+/**function CurrentTimeDate() {
+  let [date, setDate] = useState(Date());
+
+  useEffect (() => {
+    let timer = setInterval(() => setDate(new Date()), 1000);
+
+    return function cleanup() {
+      clearInterval(timer);
+    }
+  });
+
+  return (
+    <div>
+      <p>{date.toLocaleTimeString()}</p>
+      <p>{date.toLocaleDateString()}</p>
+    </div>
+  );
+}**/
+
+
+// ChatGPT prompt: create a reactjs component that displays the current time and date and automatically updates the time 
+const CurrentTime = () => {
+  // State to store the current time
+  const [currentTime, setCurrentTime] = useState(new Date());
+
+  // Update the time every second
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTime(new Date());
+    }, 1000);
+
+    // Cleanup the timer when the component is unmounted
+    return () => clearInterval(timer);
+  }, []);
+
+  return (
+    <div>
+      <h1>Current Date and Time</h1>
+      <p>{currentTime.toLocaleString()}</p> {/* Displays time and date in the locale format */}
+    </div>
+  );
+};
+
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
       <h1>MSU Dashboard</h1>
       <Weather />
+      <CurrentTime />
     </>
   )
 }
