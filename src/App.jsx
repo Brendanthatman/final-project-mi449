@@ -98,13 +98,15 @@ function ClassSchedule () {
 
   getTodaysClasses();
 
-  //alert(classList);
   return (
     <div>
+      <h3>Today's Classes</h3>
       <ul>
         {
           classList.map(theClass => {
-            <li>{theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.</li>
+            return(
+              <li key={theClass.id}>{theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.</li>
+            );
           })
         }
       </ul>
