@@ -3,6 +3,11 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 
+function getToday (dayNum) {
+  const daysoftheweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return daysoftheweek[dayNum];
+}
+
 function Weather() {
   const [currentTemp, setCurrentTemp] = useState("Loading");
   const [highTemp, setHighTemp] = useState("Loading");
@@ -51,26 +56,6 @@ function Weather() {
   );
 }
 
-/**function CurrentTimeDate() {
-  let [date, setDate] = useState(Date());
-
-  useEffect (() => {
-    let timer = setInterval(() => setDate(new Date()), 1000);
-
-    return function cleanup() {
-      clearInterval(timer);
-    }
-  });
-
-  return (
-    <div>
-      <p>{date.toLocaleTimeString()}</p>
-      <p>{date.toLocaleDateString()}</p>
-    </div>
-  );
-}**/
-
-
 // ChatGPT prompt: create a reactjs component that displays the current time and date and automatically updates the time 
 const CurrentTime = () => {
   // State to store the current time
@@ -86,21 +71,42 @@ const CurrentTime = () => {
     return () => clearInterval(timer);
   }, []);
 
+  let today = currentTime.getDay();
+  today = getToday(today);
+
   return (
     <div>
-      <h1>Current Date and Time</h1>
-      <p>{currentTime.toLocaleString()}</p> {/* Displays time and date in the locale format */}
+      <p>{currentTime.toLocaleDateString()}</p>
+      <p>{today}</p>
+      <p>{currentTime.toLocaleTimeString()}</p>
     </div>
   );
 };
+
+function ClassSchedule () {
+
+}
+
+function TopBar(){
+  const [user, setUser] = useState("[name]");
+
+  return (
+    <>
+    <div>
+      <h1>Hi, {user}.</h1>
+      <h2>Welcome to your MSU Dashboard.</h2>
+    </div>
+    <Weather />
+    <CurrentTime />
+    </>
+  );
+}
 
 function App() {
 
   return (
     <>
-      <h1>MSU Dashboard</h1>
-      <Weather />
-      <CurrentTime />
+      <TopBar />
     </>
   )
 }
