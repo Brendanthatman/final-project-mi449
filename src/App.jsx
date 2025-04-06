@@ -1,7 +1,6 @@
-import { createElement, use, useEffect, useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { createElement, use, useEffect, useState } from 'react';
+import { supabase } from './supabaseClient';
+import './App.css';
 
 function getToday (dayNum) {
   const daysoftheweek = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -84,7 +83,33 @@ const CurrentTime = () => {
 };
 
 function ClassSchedule () {
+  const [classList, setClassList] = useState([]);
+  
+  let today = new Date().getDay();
+  today = getToday(today);
 
+  async function getTodaysClasses () {
+    let { data: Classes, error } = await supabase
+      .from('Classes')
+      .select("*")
+      .like('class_day', today)
+    setClassList(Classes);
+  }
+
+  getTodaysClasses();
+
+  //alert(classList);
+  return (
+    <div>
+      <ul>
+        {
+          classList.map(theClass => {
+            <li>{theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.</li>
+          })
+        }
+      </ul>
+    </div>
+  );
 }
 
 function TopBar(){
@@ -107,6 +132,7 @@ function App() {
   return (
     <>
       <TopBar />
+      <ClassSchedule />
     </>
   )
 }
