@@ -29,7 +29,20 @@ function Login () {
       return (<Auth supabaseClient={supabase} appearance={{ theme: ThemeSupa }} />)
     }
     else {
-      return (<div>Logged in!</div>)
+      let email = "";
+
+      async function getUserInfoLoggedIn () {
+        const { data: { user } } = await supabase.auth.getUser();
+        email = user.email;
+      }
+
+      getUserInfoLoggedIn();
+
+      return (
+      <>
+        <TopBar userEmailComponent={email}/>
+        <ClassSchedule />
+      </>);
     }
   }
 
@@ -37,8 +50,6 @@ function App() {
 
   return (
     <>
-      <TopBar />
-      <ClassSchedule />
       <Login />
     </>
   )
