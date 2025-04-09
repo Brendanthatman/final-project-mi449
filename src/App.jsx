@@ -9,7 +9,8 @@ import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 
 function Login () {
-    const [session, setSession] = useState(null)
+    const [session, setSession] = useState(null);
+    const [usersemail, setUsersemail] = useState("");
 
     useEffect(() => {
       supabase.auth.getSession().then(({ data: { session } }) => {
@@ -33,16 +34,21 @@ function Login () {
 
       async function getUserInfoLoggedIn () {
         const { data: { user } } = await supabase.auth.getUser();
-        email = user.email;
+        setUsersemail(user.email);
+        //return user;
       }
 
       getUserInfoLoggedIn();
 
+      //getUserInfoLoggedIn().then((theuser) => {
+      //  email = theuser.email;
+      //});
+
       return (
-      <>
-        <TopBar userEmailComponent={email}/>
-        <ClassSchedule />
-      </>);
+          <>
+            <TopBar userEmailComponent={usersemail}/>
+            <ClassSchedule />
+          </>);
     }
   }
 
