@@ -1,12 +1,15 @@
 import { createElement, use, useEffect, useState } from 'react';
+import weatherPlaceholder from '.../assets/weathericonplaceholder.png'
 
 function Weather() {
   const [currentTemp, setCurrentTemp] = useState("Loading");
   const [highTemp, setHighTemp] = useState("Loading");
   const [lowTemp, setLowTemp] = useState("Loading");
+  const [currentIcon, setCurrentIcon] = useState("Loading");
+  const [futureIcon, setFutureIcon] = useState("Loading");
 
   let info = [];
-  /**const options = {
+  const options = {
     method: 'GET',
     headers: {
       'X-RapidAPI-Host': 'weatherapi-com.p.rapidapi.com',
@@ -19,6 +22,7 @@ function Weather() {
     .then(response => response.json())
       .then((response) => {
         setCurrentTemp(response.current.temp_f + '°F');
+        setCurrentIcon('https:' + response.current.condition.icon);
     })
     .catch(err => console.error(err));
   }
@@ -29,12 +33,13 @@ function Weather() {
       .then((response) => {
         setHighTemp(response.forecast.forecastday[0].day.maxtemp_f + '°F');
         setLowTemp(response.forecast.forecastday[0].day.mintemp_f + '°F');
+        setFutureIcon('https:' + response.forecast.forecastday[0].day.condition.icon);
     })
     .catch(err => console.error(err));
   }
 
   getCurrentWeather();
-  getForecastWeather();**/
+  getForecastWeather();
 
 
   return (
@@ -44,6 +49,8 @@ function Weather() {
         <li>{highTemp}</li>
         <li>{lowTemp}</li>
       </ul>
+      <img src={currentIcon} alt="" />
+      <img src={futureIcon} alt="" />
     </div>
   );
 }
