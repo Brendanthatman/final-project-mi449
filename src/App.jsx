@@ -4,7 +4,8 @@ import Weather from './components/weather-component/weather';
 import CurrentTime from './components/current-time-component/currenttime';
 import ClassSchedule from './components/class-schedule/classschedule';
 import TopBar from './layout/topbar/topbar';
-import Blocks from './layout/blocks';
+import QuickLinks from './components/quicklinks/quicklinks';
+import RelatedEvents from './components/related-events/relatedevents';
 import './App.css';
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
@@ -42,7 +43,8 @@ function Login () {
           <>
             <TopBar userEmailComponent={usersemail}/>
             <ClassSchedule />
-            <Blocks />
+            <QuickLinks />
+            <RelatedEvents />
           </>);
     }
   }
