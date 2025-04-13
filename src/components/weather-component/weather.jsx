@@ -1,14 +1,14 @@
 import { createElement, use, useEffect, useState } from 'react';
-import weatherPlaceholder from '.../assets/weathericonplaceholder.png'
+import weatherPlaceholder from '../../assets/weathericonplaceholder.png'
 
 function Weather() {
   const [currentTemp, setCurrentTemp] = useState("Loading");
   const [highTemp, setHighTemp] = useState("Loading");
   const [lowTemp, setLowTemp] = useState("Loading");
-  const [currentIcon, setCurrentIcon] = useState("Loading");
-  const [futureIcon, setFutureIcon] = useState("Loading");
+  const [currentIcon, setCurrentIcon] = useState(weatherPlaceholder);
+  const [futureIcon, setFutureIcon] = useState(weatherPlaceholder);
 
-  let info = [];
+  /**let info = [];
   const options = {
     method: 'GET',
     headers: {
@@ -39,7 +39,7 @@ function Weather() {
   }
 
   getCurrentWeather();
-  getForecastWeather();
+  getForecastWeather();**/
 
 
   return (

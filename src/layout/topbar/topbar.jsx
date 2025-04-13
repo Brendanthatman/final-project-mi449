@@ -23,11 +23,11 @@ function TopBar({ userEmailComponent }){
         {
           userArray.map(theUser => {
             return(
-              <h1>Hi, {theUser.user_first_name}</h1>
+              <h2>Hi, {theUser.user_first_name}</h2>
             );
           })
           }
-          <h2>Welcome to your MSU Dashboard.</h2>
+          <h1>Welcome to your MSU Dashboard.</h1>
       </div>
       <Weather />
       <CurrentTime />
