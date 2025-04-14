@@ -1,3 +1,13 @@
+@import "tailwindcss";
+
+:root {
+  --brand-primary: #004F39;
+  --brand-secondary: #3DA35D;
+  --brand-tertiary: #F9F8F4;
+  --border-color: #CDCFD0;
+  --component-bg: #ffffff;
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;

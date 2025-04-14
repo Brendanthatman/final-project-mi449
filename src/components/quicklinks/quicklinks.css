@@ -1,0 +1,9 @@
+@import
+.urlContent{
+    border-radius: 0px 10px 10px 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 7.7px -1px rgba(0, 0, 0, 0.10);
+}
+.urlTitle{
+    background-color: var(--p);
+}
