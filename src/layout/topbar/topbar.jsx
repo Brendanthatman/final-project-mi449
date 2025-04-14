@@ -23,7 +23,7 @@ function TopBar({ userEmailComponent }){
         {
           userArray.map(theUser => {
             return(
-              <h2>Hi, {theUser.user_first_name}</h2>
+              <h2 key={theUser.id}>Hi, {theUser.user_first_name}</h2>
             );
           })
           }

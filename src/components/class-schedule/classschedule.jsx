@@ -6,6 +6,7 @@ function ClassSchedule () {
     const [classList, setClassList] = useState([]);
     
     let today = new Date().getDay();
+    // today is a string of today's day of the week (e.g. "Monday")
     today = getToday(today);
   
     async function getTodaysClasses () {
@@ -21,6 +22,15 @@ function ClassSchedule () {
     return (
       <div>
         <h3>Today's Classes</h3>
+        <div>
+          <p>Sunday</p>
+          <p>Monday</p>
+          <p>Tuesday</p>
+          <p>Wednesday</p>
+          <p>Thursday</p>
+          <p>Friday</p>
+          <p>Saturday</p>
+        </div>
         <ul>
           {
             classList.map(theClass => {
