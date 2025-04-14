@@ -2,9 +2,9 @@ import { createElement, use, useEffect, useState } from 'react';
 import weatherPlaceholder from '../../assets/weathericonplaceholder.png'
 
 function Weather() {
-  const [currentTemp, setCurrentTemp] = useState("Loading");
-  const [highTemp, setHighTemp] = useState("Loading");
-  const [lowTemp, setLowTemp] = useState("Loading");
+  const [currentTemp, setCurrentTemp] = useState("CurrentTemp");
+  const [highTemp, setHighTemp] = useState("HighTemp");
+  const [lowTemp, setLowTemp] = useState("LowTemp");
   const [currentIcon, setCurrentIcon] = useState(weatherPlaceholder);
   const [futureIcon, setFutureIcon] = useState(weatherPlaceholder);
 

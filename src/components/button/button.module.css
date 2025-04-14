@@ -1,0 +1,17 @@
+.button {
+    font-size: 16px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    transition: background 0.3s ease, border 0.3s ease, transform 0.1s ease;
+}
+
+.focused {
+    background: #3DA35D;
+    color: #F9F8F4;
+}
+
+.unfocused {
+    background: #CFE7D3;
+    color: #004F39;
+}
