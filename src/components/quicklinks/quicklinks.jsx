@@ -5,7 +5,7 @@ import linkIcon from '../../assets/linkicon.png';
 
 function QuickLinks () {
     return (
-        <div className="quicklinks">
+        <div className="quicklinks m-10">
             <h3 className='blockTitle w-50 p-2 '>Quick Links</h3>
             <ul className='blockContent p-5 w-3xs text-base text-left'>
                 <li className='pb-2 flex items-start'>
