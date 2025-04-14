@@ -1,5 +1,4 @@
 import Button from '../button/button';
-import { supabase } from '../../supabaseClient';
 
 function RelatedEvents () {
     /**const [listEvents, setListEvents] = useState([]);
