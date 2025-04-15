@@ -23,7 +23,7 @@ function SportsEvents () {
 
     return (
         <div>
-            { upcomingSports.map((event) => {
+            {/*{ upcomingSports.map((event) => {
                 return (
                     <>
                         <h4 key={event.name}>{event.name}</h4>
@@ -33,7 +33,12 @@ function SportsEvents () {
                         <p>{event.is_virtual ? "Virtual" : "In-Person"}</p>
                     </>
                 );
-            })}
+            })}*/}
+            <h4>Example Event Title</h4>
+            <p>2025-04-15 14:00:00</p>
+            <p>2025-04-15 15:00:00</p>
+            <p>Breslin Center</p>
+            <p>Virtual</p>
         </div>
     );
 }
