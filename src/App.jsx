@@ -42,7 +42,7 @@ function Login () {
       return (
           <>
             <TopBar userEmailComponent={usersemail}/>
-            <ClassSchedule />
+            <ClassSchedule userEmail={usersemail}/>
             <QuickLinks />
             <RelatedEvents />
           </>);

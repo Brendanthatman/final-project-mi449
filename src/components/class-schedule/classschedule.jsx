@@ -4,7 +4,7 @@ import getToday from '../globalComponentFunctions';
 import "./classschedule.css";
 import "../../App.css";
 
-function ClassSchedule () {
+function ClassSchedule ({ userEmail }) {
     const [classList, setClassList] = useState([]);
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
     let todayIndex = new Date().getDay(); // Get the day index (0-6)
@@ -18,6 +18,7 @@ function ClassSchedule () {
         .from('Classes')
         .select("*")
         .like('class_day', today)
+        .like('user_id', userEmail)
       setClassList(Classes);
     }
   
