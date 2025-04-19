@@ -1,5 +1,6 @@
 import { createElement, use, useEffect, useState } from 'react';
 import { supabase } from '../../supabaseClient';
+import "./topbar.css";
 import Weather from '../../components/weather-component/weather';
 import CurrentTime from '../../components/current-time-component/currenttime';
 
@@ -19,18 +20,23 @@ function TopBar({ userEmailComponent }){
   
     return (
       <>
-      <div>
-        {
-          userArray.map(theUser => {
-            return(
-              <h2 key={theUser.id}>Hi, {theUser.user_first_name}</h2>
-            );
-          })
-          }
-          <h1>Welcome to your MSU Dashboard.</h1>
+      <div className='flex flex-nowrap items-center justify-between'>
+        <div className='text-left'>
+          {
+            userArray.map(theUser => {
+              return(
+                <h2 className="userText" key={theUser.id}>Hi, {theUser.user_first_name}</h2>
+              );
+            })
+            }
+            <div className='text-xl'>Welcome to your MSU Dashboard</div>
+        </div>
+        <div className='flex flex-nowrap items-center justify-between'>
+          <Weather />
+          <CurrentTime />
+        </div>
       </div>
-      <Weather />
-      <CurrentTime />
+
       </>
     );
   }

@@ -1,4 +1,5 @@
 import { createElement, use, useEffect, useState } from 'react';
+import "./weather.css";
 import weatherPlaceholder from '../../assets/weathericonplaceholder.png'
 
 function Weather() {
@@ -44,13 +45,22 @@ function Weather() {
 
   return (
     <div>
-      <ul id='weather_list'>
-        <li>{currentTemp}</li>
-        <li>{highTemp}</li>
-        <li>{lowTemp}</li>
-      </ul>
-      <img src={currentIcon} alt="" />
-      <img src={futureIcon} alt="" />
+      <div className="p-5 weatherBlock flex items-center space-x-4" id='weather_list' style={{width: "fit-content"}}>
+        <div className="flex flex-col items-center">
+          <p className='weatherText pb-1.5 text-base'>Current</p>
+          <img className="weatherIcon" src={currentIcon} alt="" />
+          <div className='weatherText pt-1 text-sm'>{currentTemp}</div>
+        </div>
+        <div className="flex flex-col items-center">
+          <p className='weatherText pb-1.5 text-base'>Today</p>
+          <img className="weatherIcon" src={futureIcon} alt="" />
+          <div className='weatherText flex pt-1 text-sm'>
+            <div>{highTemp}</div>
+            <span className='mx-1'>|</span>
+            <div>{lowTemp}</div>
+          </div>
+        </div>
+      </div>
     </div>
   );
 }

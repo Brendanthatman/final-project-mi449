@@ -1,0 +1,17 @@
+@import url('../../App.css');
+
+.weatherIcon{
+    width: 37px;
+}
+
+.weatherBlock{
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 1px 7.7px -1px rgba(0, 0, 0, 0.10);
+}
+
+.weatherText{
+    color: var(--text-color);
+    font-family: "ADLaM Display", system-ui;
+    font-weight: 400;
+}

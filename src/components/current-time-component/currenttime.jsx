@@ -1,5 +1,6 @@
 import { createElement, use, useEffect, useState } from 'react';
 import getToday from '../globalComponentFunctions';
+import "./currenttime.css";
 
 // ChatGPT prompt: create a reactjs component that displays the current time and date and automatically updates the time 
 const CurrentTime = () => {
@@ -20,10 +21,17 @@ const CurrentTime = () => {
   today = getToday(today);
 
   return (
-    <div>
-      <p>{currentTime.toLocaleDateString()}</p>
-      <p>{today}</p>
-      <p>{currentTime.toLocaleTimeString()}</p>
+    <div className='text-right' style={{ width: '140px' }}>
+      <p className='fontDisplay text-xl'>{currentTime.toLocaleDateString()}</p>
+      <p className='fontInstrument text-xl font-medium'>{today}</p>
+      <p className='fontInstrument text-xl font-medium'>
+        {currentTime.toLocaleTimeString('en-US', {
+          hour12: true,
+          hour: '2-digit',
+          minute: '2-digit',
+          second: '2-digit',
+        })}
+      </p>
     </div>
   );
 };

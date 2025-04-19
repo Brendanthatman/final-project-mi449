@@ -6,6 +6,10 @@
     transition: background 0.3s ease, border 0.3s ease, transform 0.1s ease;
 }
 
+.button:focus {
+    outline: none; /* Remove the default outline */
+}
+
 .focused {
     background: #3DA35D;
     color: #F9F8F4;

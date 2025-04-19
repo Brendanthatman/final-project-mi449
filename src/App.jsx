@@ -41,10 +41,13 @@ function Login () {
 
       return (
           <>
+          <div className='container'>
             <TopBar userEmailComponent={usersemail}/>
             <ClassSchedule userEmail={usersemail}/>
             <QuickLinks />
             <RelatedEvents />
+          </div>
+            
           </>);
     }
   }
