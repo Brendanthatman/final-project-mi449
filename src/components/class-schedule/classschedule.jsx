@@ -7,48 +7,79 @@ import "../../App.css";
 function ClassSchedule ({ userEmail }) {
     const [classList, setClassList] = useState([]);
     const daysOfWeek = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    let todayIndex = new Date().getDay(); // Get the day index (0-6)
+    const [selectedDayIndex, setSelectedDayIndex] = useState(new Date().getDay()); // Default to today
     
-    let today = new Date().getDay();
-    // today is a string of today's day of the week (e.g. "Monday")
-    today = getToday(today);
+    // Function to convert day index to day string (for Supabase query)
+    const getDayString = (dayIndex) => {
+      const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+      return days[dayIndex];
+    };
+     
+    // Function to get classes for the selected day
+    const getClassesForDay = async (dayIndex) => {
+      const dayString = getDayString(dayIndex);
+      
+      try {
+        let { data: Classes, error } = await supabase
+          .from('Classes')
+          .select("*")
+          .like('class_day', dayString)
+          .like('user_id', userEmail);
+          
+        if (error) {
+          console.error("Error fetching classes:", error);
+          return;
+        }
+        
+        setClassList(Classes || []);
+      } catch (err) {
+        console.error("Exception when fetching classes:", err);
+      }
+    };
   
-    async function getTodaysClasses () {
-      let { data: Classes, error } = await supabase
-        .from('Classes')
-        .select("*")
-        .like('class_day', today)
-        .like('user_id', userEmail)
-      setClassList(Classes);
-    }
+    // Handle day selection
+    const selectDay = (index) => {
+      setSelectedDayIndex(index);
+    };
   
-    getTodaysClasses();
+    // Fetch classes whenever selectedDayIndex changes
+    useEffect(() => {
+      getClassesForDay(selectedDayIndex);
+    }, [selectedDayIndex, userEmail]);
   
     return (
-      <div className=' my-5'> 
+      <div className='my-5'> 
         <h3 className="blockTitle w-60 p-2">Today's Classes</h3>
         <div className="blockContent p-5 text-base text-left">
           <div className='flex flex-row justify-evenly'>
             {daysOfWeek.map((day, index) => {
-              const isToday = index === todayIndex;
+              const isSelected = index === selectedDayIndex;
               return (
-                <div key={day} className="text-center w-1/7">
-                  <p className={isToday ? "text-green-600" : "text-gray-500"}>{day}</p>
-                  {isToday && <div className="border-b-3 border-green-600 w-auto mx-auto pt-1"></div>} {/* Green line */}
+                <div key={day} className="text-center w-1/7 cursor-pointer" onClick={() => selectDay(index)}>
+                  <p className={isSelected ? "text-green-600" : "text-gray-500"}>{day}</p>
+                  {isSelected && <div className="border-b-3 border-green-600 w-auto mx-auto pt-1"></div>} {/* Green line */}
                 </div>
               );
             })}
           </div>
-          <hr className="border-0.5 border-gray-300 my-0" /> {/* Gray line */}
+          <hr className="border-0.5 border-gray-300 my-0" />
           <ul>
-          {classList.length > 0 ? (
+          {classList && classList.length > 0 ? (
             classList.map(theClass => (
-              <li key={theClass.id}>
-                {theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.
-              </li>
+              <div key={theClass.id} className="py-2 mt-4 flex items-center">
+                <div>
+                  <p className="text-sm font-normal fontInstrumental text-black pl-2">{theClass.class_begin}</p>
+                  <p className="text-sm font-normal fontInstrumental text-black pl-2">{theClass.class_end}</p>
+                </div>
+                <div className="border-l-1 h-16 text-green-600 ml-5"></div>
+                <div className="flex-1 px-2 text-left ml-4">
+                  <p className="font-medium text-gray-800">{theClass.class_title}</p>
+                  <p className="text-sm text-gray-500">{theClass.class_location}</p>
+                </div>
+              </div>
             ))
           ) : (
-            <li className='text-center m-10 font-medium'>No class today</li>
+            <li className='text-center m-10 font-medium'>No class on {getDayString(selectedDayIndex)}</li>
           )}
           </ul>
         </div>
