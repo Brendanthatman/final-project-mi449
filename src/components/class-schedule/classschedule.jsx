@@ -25,7 +25,7 @@ function ClassSchedule ({ userEmail }) {
     getTodaysClasses();
   
     return (
-      <div className='m-10'> 
+      <div className=' my-5'> 
         <h3 className="blockTitle w-60 p-2">Today's Classes</h3>
         <div className="blockContent p-5 text-base text-left">
           <div className='flex flex-row justify-evenly'>
@@ -41,13 +41,15 @@ function ClassSchedule ({ userEmail }) {
           </div>
           <hr className="border-0.5 border-gray-300 my-0" /> {/* Gray line */}
           <ul>
-            {
-              classList.map(theClass => {
-                return(
-                  <li key={theClass.id}>{theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.</li>
-                );
-              })
-            }
+          {classList.length > 0 ? (
+            classList.map(theClass => (
+              <li key={theClass.id}>
+                {theClass.class_title} at {theClass.class_begin} until {theClass.class_end}.
+              </li>
+            ))
+          ) : (
+            <li className='text-center m-10 font-medium'>No class today</li>
+          )}
           </ul>
         </div>
       </div>

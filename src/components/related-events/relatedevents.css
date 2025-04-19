@@ -1,0 +1,22 @@
+@import url('../../App.css');
+
+.cardBorder{
+    border-radius: 10px;
+    border: 0.5px solid #D9D9D9;
+    background: var(--List-bg, #FFF);
+    box-shadow: 0px 0px 4.3px 0px rgba(0, 0, 0, 0.10);
+}
+
+.cardTag{
+    border: 0.5px solid var(--brand-secondary);
+    background: #CFE7D3;
+}
+
+.star-icon {
+    color: #3DA35D; /* Default color */
+    cursor: pointer;
+  }
+  
+.star-icon.starred {
+color: #3DA35D; /* Green color when starred */
+}
