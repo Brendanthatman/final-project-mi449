@@ -5,3 +5,11 @@
     height: 200px;
     background-color: aliceblue;
 }
+
+.dayHover{
+    transition: 0.3s ease;
+}
+
+.dayHover:hover p {
+    color: var(--brand-secondary) !important;
+  }

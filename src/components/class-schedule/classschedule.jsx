@@ -55,8 +55,8 @@ function ClassSchedule ({ userEmail }) {
             {daysOfWeek.map((day, index) => {
               const isSelected = index === selectedDayIndex;
               return (
-                <div key={day} className="text-center w-1/7 cursor-pointer" onClick={() => selectDay(index)}>
-                  <p className={isSelected ? "text-green-600" : "text-gray-500"}>{day}</p>
+                <div key={day} className="text-center w-1/7 cursor-pointer dayHover" onClick={() => selectDay(index)}>
+                  <p className={isSelected ? "text-green-600" : "text-gray-500 dayHover"}>{day}</p>
                   {isSelected && <div className="border-b-3 border-green-600 w-auto mx-auto pt-1"></div>} {/* Green line */}
                 </div>
               );

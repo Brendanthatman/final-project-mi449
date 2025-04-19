@@ -18,4 +18,10 @@
 .unfocused {
     background: #CFE7D3;
     color: #004F39;
+    transition: 0.3s ease;
+}
+
+.unfocused:hover {
+    background: #CFE7D3;
+    color: #3DA35D;
 }
