@@ -63,10 +63,10 @@ function SportsEvents () {
             {upcomingSports.map((event) => (
               <div
                 key={event.id || event.name} // Use event.id if available, otherwise event.name
-                className="bg-gray-50 rounded-lg px-4 py-3 flex justify-between items-center cardBorder my-5"
+                className="rounded-lg px-4 py-3 flex justify-between items-center cardBorder my-5" style={{backgroundColor: 'var(--list-bg)'}}
               >
                 {/* Time Column */}
-                <div className="text-sm font-normal fontInstrumental text-black pl-2">
+                <div className="text-sm font-normal fontInstrumental pl-2" style={{color: 'var(--text-black)'}}>
                   <p>{event.start_time}</p>
                   <p>{event.end_time}</p>
                 </div>
@@ -76,9 +76,9 @@ function SportsEvents () {
 
                 {/* Event Information */}
                 <div className="flex-1 px-2 text-left ml-4">
-                  <h4 className="font-medium text-gray-800 mb-1">{event.name}</h4>
-                  <p className="text-sm text-gray-500">{event.date}</p>
-                  <p className="text-sm text-gray-500">{event.venue?.name}</p> {/* Use optional chaining */}
+                  <h4 className="font-medium mb-1" style={{color: 'var(--text-black)'}}>{event.name}</h4>
+                  <p className="text-sm" style={{color: 'var(--text-color)'}}>{event.date}</p>
+                  <p className="text-sm" style={{color: 'var(--text-color)'}}>{event.venue?.name}</p> {/* Use optional chaining */}
                 </div>
 
                 {/* Modality (Placeholder) */}

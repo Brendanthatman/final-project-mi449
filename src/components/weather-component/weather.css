@@ -6,7 +6,7 @@
 
 .weatherBlock{
     border-radius: 10px;
-    background-color: rgb(255, 255, 255);
+    background-color: var(--component-bg);
     box-shadow: 0px 1px 7.7px -1px rgba(0, 0, 0, 0.10);
 }
 

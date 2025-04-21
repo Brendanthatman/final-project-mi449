@@ -40,9 +40,9 @@ function SchoolEvents () {
             { eventsList.map((event) => {
                 return (
                     <>
-                    <div key={event.id} className="bg-gray-50 rounded-lg px-4 py-3 flex justify-between items-center cardBorder my-5">
+                    <div key={event.id} className="rounded-lg px-4 py-3 flex justify-between items-center cardBorder my-5" style={{backgroundColor: 'var(--list-bg)'}}>
                         {/* time */}
-                        <div className="text-sm font-normal fontInstrumental text-black pl-2">
+                        <div className="text-sm font-normal fontInstrumentalpl-2" style={{color: 'var(--text-color)'}}>
                             <p>{event.beginning_time}</p>
                             <p>{event.ending_time}</p>
                         </div>
@@ -51,9 +51,9 @@ function SchoolEvents () {
 
                         {/* activity */}
                         <div className="flex-1 px-2 text-left ml-4">
-                            <h4 className="font-medium text-gray-800 mb-1" key={event.id}>{event.title}</h4>
-                            <p className="text-sm text-gray-500">{event.date}</p>
-                            <p className="text-sm text-gray-500">{event.location}</p>
+                            <h4 className="font-mediu mb-1" style={{color: 'var(--text-black)'}} key={event.id}>{event.title}</h4>
+                            <p className="text-sm" style={{color: 'var(--text-color)'}}>{event.date}</p>
+                            <p className="text-sm" style={{color: 'var(--text-color)'}}>{event.location}</p>
                         </div>
 
                         {/* modality */}

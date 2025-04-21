@@ -21,7 +21,7 @@ const CurrentTime = () => {
   today = getToday(today);
 
   return (
-    <div className='text-right' style={{ width: '140px' }}>
+    <div className='text-right' style={{ width: '140px', color: 'var(--text-color)' }}>
       <p className='fontDisplay text-xl'>{currentTime.toLocaleDateString()}</p>
       <p className='fontInstrument text-xl font-medium'>{today}</p>
       <p className='fontInstrument text-xl font-medium'>

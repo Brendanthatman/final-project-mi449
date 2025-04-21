@@ -8,6 +8,7 @@
 
 .dayHover{
     transition: 0.3s ease;
+    color: 'var(--text-color)';
 }
 
 .dayHover:hover p {

@@ -9,6 +9,8 @@
   --border-color: #CDCFD0;
   --component-bg: #ffffff;
   --text-color: #535657;
+  --text-black: #000000;
+  --list-bg: #FFFFFF;
 }
 
 [data-theme="dark"] {
@@ -18,6 +20,8 @@
   --border-color: #007F5D;
   --component-bg: #303132;
   --text-color: rgb(164, 164, 164);
+  --text-black: #ffffff;
+  --list-bg: #393B3B;
 }
 
 #root {

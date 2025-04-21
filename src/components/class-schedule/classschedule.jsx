@@ -68,18 +68,18 @@ function ClassSchedule ({ userEmail }) {
             classList.map(theClass => (
               <div key={theClass.id} className="py-2 mt-4 flex items-center">
                 <div>
-                  <p className="text-sm font-normal fontInstrumental text-black pl-2">{theClass.class_begin}</p>
-                  <p className="text-sm font-normal fontInstrumental text-black pl-2">{theClass.class_end}</p>
+                  <p className="text-sm font-normal fontInstrumental pl-2" style={{color: 'var(--text-color)'}}>{theClass.class_begin}</p>
+                  <p className="text-sm font-normal fontInstrumental pl-2" style={{color: 'var(--text-color)'}}>{theClass.class_end}</p>
                 </div>
                 <div className="border-l-1 h-16 text-green-600 ml-5"></div>
                 <div className="flex-1 px-2 text-left ml-4">
-                  <p className="font-medium text-gray-800">{theClass.class_title}</p>
-                  <p className="text-sm text-gray-500">{theClass.class_location}</p>
+                  <p className="font-medium" style={{color: 'var(--text-black)'}}>{theClass.class_title}</p>
+                  <p className="text-sm" style={{color: 'var(--text-color)'}}>{theClass.class_location}</p>
                 </div>
               </div>
             ))
           ) : (
-            <li className='text-center m-10 font-medium'>No class on {getDayString(selectedDayIndex)}</li>
+            <li className='text-center m-10 font-medium' style={{color: 'var(--text-black)'}}>No class on {getDayString(selectedDayIndex)}</li>
           )}
           </ul>
         </div>
