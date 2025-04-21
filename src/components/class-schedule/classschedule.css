@@ -14,3 +14,11 @@
 .dayHover:hover p {
     color: var(--brand-secondary) !important;
   }
+
+.green-text{
+    color: var(--brand-secondary);
+}
+
+.gray-text{
+    color: var(--text-color);
+}
