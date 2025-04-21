@@ -9,6 +9,7 @@ import RelatedEvents from './components/related-events/relatedevents';
 import './App.css';
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
+import SideBar from './layout/sidebar/sidebar';
 
 function Login () {
     const [session, setSession] = useState(null);
@@ -48,6 +49,7 @@ function Login () {
               <RelatedEvents />
               <QuickLinks /> 
             </div>
+            <SideBar />
           </div>
             
           </>);
