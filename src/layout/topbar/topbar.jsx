@@ -29,7 +29,7 @@ function TopBar({ userEmailComponent }){
               );
             })
             }
-            <div className='text-xl'>Welcome to your MSU Dashboard</div>
+            <div className='text-xl' style={{color: 'var(--text-color)'}}>Welcome to your MSU Dashboard</div>
         </div>
         <div className='flex flex-nowrap items-center justify-between'>
           <Weather />

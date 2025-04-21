@@ -11,6 +11,15 @@
   --text-color: #535657;
 }
 
+[data-theme="dark"] {
+  --brand-primary: #003D2B;
+  --brand-secondary: #3DA35D;
+  --brand-tertiary: #18191A;
+  --border-color: #007F5D;
+  --component-bg: #303132;
+  --text-color: rgb(164, 164, 164);
+}
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
@@ -43,7 +52,7 @@ body{
 
 .blockContent{
   border-radius: 0px 10px 10px 10px;
-  background-color: rgb(255, 255, 255);
+  background-color: var(--component-bg);
   box-shadow: 0px 1px 7.7px -1px rgba(0, 0, 0, 0.10);
 }
 .blockTitle{
