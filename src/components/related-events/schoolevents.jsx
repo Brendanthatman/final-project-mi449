@@ -39,7 +39,6 @@ function SchoolEvents () {
         <div>
             { eventsList.map((event) => {
                 return (
-                    <>
                     <div key={event.id} className="bg-gray-50 rounded-lg px-4 py-3 flex justify-between items-center cardBorder my-5">
                         {/* time */}
                         <div className="text-sm font-normal fontInstrumental text-black pl-2">
@@ -78,8 +77,6 @@ function SchoolEvents () {
                             </span>
                         </div>
                     </div>
-                        
-                    </>
                 );
             })}
         </div>

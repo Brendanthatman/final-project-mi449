@@ -25,9 +25,9 @@ function SideBar () {
 
     return(
         <div className="sidebar">
-            <a href=""><img src={msuLogo} alt="" /></a>
+            <a href="https://msu.edu/"><img src={msuLogo} alt="" /></a>
             <a href=""><img src={homeicon} alt="" /></a>
-            <a href=""><img src={mapicon} alt="" /></a>
+            <a href="https://maps.app.goo.gl/bT3FFW5VWG4TSFow8"><img src={mapicon} alt="" /></a>
             <button onClick={toggleTheme}><img src={mode} alt="" /></button>
         </div>
     );
