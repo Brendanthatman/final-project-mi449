@@ -35,8 +35,8 @@
 
 .container {
   max-width: 1280px;
-  width: 1000px;
-  margin: 0 auto;
+  width: 1200px;
+  margin-left: 4%;
   padding: 0 20px;
 }
 

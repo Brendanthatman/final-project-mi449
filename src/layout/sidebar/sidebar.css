@@ -1,0 +1,25 @@
+@import url('../../App.css');
+
+.toggleBtn{
+    background-Color: var(--sidebar-bg);
+    transition: 0.3s;
+}
+.toggleBtn:focus{
+    outline: none; /* Remove the default outline */
+    border-color: transparent;
+}
+.toggleBtn:hover {
+    outline: none; /* Remove the default outline */
+    border-color: transparent;
+    background-color: var(--brand-primary);
+}
+
+[data-theme="dark"] .toggleBtn {
+    background-Color: var(--sidebar-bg); /* Different background color in dark mode */
+    color: var(--text-color); /* Different text color in dark mode */
+}
+
+[data-theme="dark"] .toggleBtn:hover {
+    background-Color: var(--brand-primary); /* Different background color in dark mode */
+    color: var(--text-color); /* Different text color in dark mode */
+}
