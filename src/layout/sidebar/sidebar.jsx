@@ -1,8 +1,6 @@
 import msulogolight from '../../assets/msulogolightmode.png';
 import msulogodark from '../../assets/msulogodarkmode.png';
 import { useState, useEffect } from 'react';
-import './sidebar.css';
-import '../../App.css';
 import lightmodeicon from '../../assets/lightmodeicon.png';
 import darkmodeicon from '../../assets/darkmodeicon.png';
 import mapicon from '../../assets/mapicon.png';
@@ -24,11 +22,25 @@ function SideBar () {
     };
 
     return(
-        <div className="sidebar">
-            <a href="https://msu.edu/"><img src={msuLogo} alt="" /></a>
-            <a href=""><img src={homeicon} alt="" /></a>
-            <a href="https://maps.app.goo.gl/bT3FFW5VWG4TSFow8"><img src={mapicon} alt="" /></a>
-            <button onClick={toggleTheme}><img src={mode} alt="" /></button>
+        <div className="sidebar fixed left-0 top-0 h-screen w-25 transition-colors duration-200">
+            <div className="flex flex-col h-full justify-between py-4">
+                <ul className="flex flex-col items-center space-y-6">
+                    <li><a href="https://msu.edu/" className="p-2 rounded-lg">
+                        <img src={msuLogo} alt="MSU Logo"  />
+                    </a></li>
+                    <li><a href="" className="p-2 rounded-lg">
+                        <img src={homeicon} alt="Home" />
+                    </a></li>
+                    <li><a href="https://maps.app.goo.gl/bT3FFW5VWG4TSFow8" className="p-2 rounded-lg">
+                        <img src={mapicon} alt="Map" />
+                    </a></li>
+                </ul>
+                <div className="flex justify-center">
+                    <button onClick={toggleTheme} className="p-2 rounded-lg">
+                        <img src={mode} alt="Theme toggle" />
+                    </button>
+                </div>
+            </div>
         </div>
     );
 }
