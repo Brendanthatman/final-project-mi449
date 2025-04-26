@@ -10,6 +10,7 @@ import './App.css';
 import { Auth } from '@supabase/auth-ui-react'
 import { ThemeSupa } from '@supabase/auth-ui-shared'
 import SideBar from './layout/sidebar/sidebar';
+import TodoList from './components/TodoList/TodoList';
 
 function Login () {
     const [session, setSession] = useState(null);
@@ -46,6 +47,7 @@ function Login () {
             <TopBar userEmailComponent={usersemail}/>
             <ClassSchedule userEmail={usersemail}/>
             <div className='flex flex-nowrap items-start'>
+              <TodoList />
               <RelatedEvents />
               <QuickLinks /> 
             </div>
