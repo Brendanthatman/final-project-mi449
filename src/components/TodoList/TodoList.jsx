@@ -62,9 +62,9 @@ function TodoList() {
             placeholder="Add a task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            className="flex-grow p-2 border border-gray-300 rounded-l-md text-black"
-            // (added text-black at the end)
+            className="flex-grow p-2 border border-gray-300 rounded-l-md text-[var(--text-color)] placeholder-[var(--text-color)]"
         />
+
 
           <button
             onClick={handleAddTask}
