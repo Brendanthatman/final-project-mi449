@@ -1,1 +1,12 @@
-@import url('../../App.css');
+.todo-tasks {
+    margin-top: 20px;
+  }
+  
+  .line-through {
+    text-decoration: line-through;
+  }
+  
+  .text-gray-400 {
+    color: gray;
+  }
+  
