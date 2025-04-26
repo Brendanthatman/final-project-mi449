@@ -57,13 +57,15 @@ function TodoList() {
 
         {/* Add New Task */}
         <div className="flex mt-4">
-          <input
+        <input
             type="text"
             placeholder="Add a task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            className="flex-grow p-2 border border-gray-300 rounded-l-md"
-          />
+            className="flex-grow p-2 border border-gray-300 rounded-l-md text-black"
+            // (added text-black at the end)
+        />
+
           <button
             onClick={handleAddTask}
             className="bg-[var(--brand-secondary)] text-white px-4 py-2 rounded-r-md text-lg"
