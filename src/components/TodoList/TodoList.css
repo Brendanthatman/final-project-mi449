@@ -10,17 +10,33 @@
     color: gray;
   }
   
-.todo-task input[type="checkbox"] {
+  .todo-task input[type="checkbox"] {
     width: 20px;
     height: 20px;
-    accent-color: var(--brand-primary);
-  }
-  
-input[type="checkbox"] {
-    accent-color: var(--brand-primary);
-  }
-  
-  input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    background-color: var(--component-bg);
     border: 2px solid var(--text-color);
+    border-radius: 4px;
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .todo-task input[type="checkbox"]:checked::after {
+    content: '✓';
+    font-size: 14px;
+    color: var(--brand-primary);
+    position: absolute;
+    top: 1px;
+    left: 4px;
+  }
+  
+  :root .todo-task input[type="checkbox"] {
+    background-color: #ffffff;
+  }
+  
+  [data-theme="dark"] .todo-task input[type="checkbox"] {
+    background-color: #393B3B;
   }
   
