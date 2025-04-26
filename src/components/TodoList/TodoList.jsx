@@ -1,9 +1,21 @@
-import React, { useState } from 'react';
+import React, { useState , useEffect } from 'react';
 import './TodoList.css'; 
 
 function TodoList() {
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
+
+  useEffect(() => {
+    const storedTasks = localStorage.getItem('tasks');
+    if (storedTasks) {
+        setTasks(JSON.parse(storedTasks));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
 
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
