@@ -29,10 +29,10 @@ function SideBar () {
                     <li><a href="https://msu.edu/" className="p-2 rounded-lg">
                         <img src={msuLogo} alt="MSU Logo"  />
                     </a></li>
-                    <li><a href="" className="p-2 rounded-lg">
+                    <li><a href="" className="p-2 rounded-lg sideBtn">
                         <img src={homeicon} alt="Home" />
                     </a></li>
-                    <li><a href="https://maps.app.goo.gl/bT3FFW5VWG4TSFow8" className=" rounded-lg">
+                    <li><a href="https://maps.app.goo.gl/bT3FFW5VWG4TSFow8" className=" rounded-lg sideBtn">
                         <img src={mapicon} alt="Map" />
                     </a></li>
                 </ul>

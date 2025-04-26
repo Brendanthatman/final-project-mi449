@@ -7,8 +7,12 @@
 }
 
 .dayHover{
-    transition: 0.3s ease;
     color: 'var(--text-color)';
+    transition: 0.3s ease;
+}
+
+.dayHover p{
+    transition: 0.3s ease;
 }
 
 .dayHover:hover p {

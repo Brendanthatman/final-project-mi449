@@ -23,3 +23,11 @@
     background-Color: var(--brand-primary); /* Different background color in dark mode */
     color: var(--text-color); /* Different text color in dark mode */
 }
+
+.sideBtn{
+    transition: 0.3s;
+}
+
+.sideBtn:hover{
+    opacity: 0.7;
+}

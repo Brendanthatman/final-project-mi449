@@ -10,7 +10,7 @@
 .cardTag{
     border: 0.5px solid var(--brand-secondary);
     background: #CFE7D3;
-    color: var(--brand-main);
+    color: var(--brand-primary);
 }
 
 .star-icon {
