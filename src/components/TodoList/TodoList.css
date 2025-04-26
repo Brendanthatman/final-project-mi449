@@ -10,3 +10,17 @@
     color: gray;
   }
   
+.todo-task input[type="checkbox"] {
+    width: 20px;
+    height: 20px;
+    accent-color: var(--brand-primary);
+  }
+  
+input[type="checkbox"] {
+    accent-color: var(--brand-primary);
+  }
+  
+  input[type="checkbox"] {
+    border: 2px solid var(--text-color);
+  }
+  

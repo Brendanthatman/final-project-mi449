@@ -48,9 +48,10 @@ function TodoList() {
                 onChange={() => handleToggleTask(index)}
                 className="mr-2"
               />
-              <span className={task.completed ? 'line-through text-gray-400' : ''}>
+              <span className={`${task.completed ? 'line-through text-gray-400' : 'text-[var(--text-color)]'}`}>
                 {task.text}
               </span>
+
             </div>
           ))}
         </div>
