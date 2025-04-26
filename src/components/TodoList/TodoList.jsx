@@ -19,28 +19,25 @@ function TodoList() {
   };
 
   return (
-    <div className="blockContent p-4 w-[300px] mr-5">
-      {/* Top Green Header */}
-      <div className="blockTitle p-2 text-center">
-        Todo List
-      </div>
-
-      {/* Main White Body */}
-      <div className="bg-white p-3 rounded-b-lg">
-        
-        {/* Date with Arrows */}
-        <div className="flex justify-center items-center my-4">
-          <button className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-lg">
+    <div className="blockContent p-0 w-[300px] mr-5">
+      {/* Green Tab including title + date */}
+      <div className="blockTitle flex flex-col items-center p-2">
+        <div className="font-semibold">Todo List</div>
+        <div className="flex items-center justify-center mt-2">
+          <button className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm">
             &#8592;
           </button>
-          <div className="bg-[var(--brand-secondary)] text-white rounded-full px-6 py-1 text-sm font-semibold">
+          <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
             Mar 31
           </div>
-          <button className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-lg">
+          <button className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm">
             &#8594;
           </button>
         </div>
+      </div>
 
+      {/* White Body */}
+      <div className="bg-[var(--component-bg)] p-4 rounded-b-lg">
         {/* Task List */}
         <div className="todo-tasks">
           {tasks.map((task, index) => (
@@ -74,7 +71,6 @@ function TodoList() {
             +
           </button>
         </div>
-
       </div>
     </div>
   );
