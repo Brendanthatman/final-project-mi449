@@ -66,7 +66,7 @@ function TodoList() {
 
 
       {/* White Body */}
-      <div className="bg-[var(--component-bg)] p-5 rounded-b-lg">
+      <div className="blockContent p-5 w-2xs">
         {/* Row with arrows and date */}
         <div className="flex items-center justify-center mb-4">
             <button
