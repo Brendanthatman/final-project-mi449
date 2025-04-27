@@ -4,6 +4,7 @@ import "./relatedevents.css";
 
 function SportsEvents () {
     const [upcomingSports, setUpcomingSports] = useState([]);
+    // NOTE: API below was in use, but commented out as the maximum queries was reached for the month for the free tier; example events are used instead.
     /**const options = {
         method: 'GET',
         headers: {
@@ -27,20 +28,20 @@ function SportsEvents () {
           const fakeEvents = [
             {
               id: 1,
-              name: "Example Event Title",
-              start_time: "2:00PM",
-              end_time: "3:00PM",
-              date: "Tuesday, April 15, 2025",
-              venue: { name: "Breslin Center" },
-              is_virtual: true,
+              name: "Baseball vs. Oregon",
+              start_time: "6:02PM",
+              end_time: "9:30PM",
+              date: "Friday, May 2, 2025",
+              venue: { name: "Jeff Ishbia Field at McLane Stadium" },
+              is_virtual: false,
             },
             {
               id: 2,
-              name: "Another Example Event",
-              start_time: "5:00PM",
-              end_time: "8:00PM",
-              date: "Sunday, April 20, 2025",
-              venue: { name: "Spartan Stadium" },
+              name: "Softball at Oregon",
+              start_time: "9:00PM",
+              end_time: "12:00AM",
+              date: "Friday, May 2, 2025",
+              venue: { name: "Eugene, OR" },
               is_virtual: false,
             },
           ];
@@ -49,17 +50,6 @@ function SportsEvents () {
 
     return (
         <div>
-            {/*{ upcomingSports.map((event) => {
-                return (
-                    <>
-                        <h4 key={event.name}>{event.name}</h4>
-                        <p>{event.start_time}</p>
-                        <p>{event.end_time}</p>
-                        <p>{event.venue.name}</p>
-                        <p>{event.is_virtual ? "Virtual" : "In-Person"}</p>
-                    </>
-                );
-            })}*/}
             {upcomingSports.map((event) => (
               <div
                 key={event.id || event.name} // Use event.id if available, otherwise event.name

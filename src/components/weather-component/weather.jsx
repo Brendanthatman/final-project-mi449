@@ -1,4 +1,4 @@
-import { createElement, use, useEffect, useState } from 'react';
+import { useState } from 'react';
 import "./weather.css";
 import weatherPlaceholder from '../../assets/weathericonplaceholder.png'
 
@@ -9,7 +9,6 @@ function Weather() {
   const [currentIcon, setCurrentIcon] = useState(weatherPlaceholder);
   const [futureIcon, setFutureIcon] = useState(weatherPlaceholder);
 
-  /**let info = [];
   const options = {
     method: 'GET',
     headers: {
@@ -40,7 +39,7 @@ function Weather() {
   }
 
   getCurrentWeather();
-  getForecastWeather();**/
+  getForecastWeather();
 
 
   return (
