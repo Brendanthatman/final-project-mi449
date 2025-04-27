@@ -76,13 +76,13 @@ function TodoList() {
             &#8592;
             </button>
 
-            <div className="bg-[#3DA35D] text-white rounded-full px-4 py-1 text-xs font-semibold">
+            <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
             {formattedDate}
             </div>
 
             <button
             onClick={handleNextDate}
-            className="bg-[#3DA35D] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
             >
             &#8594;
             </button>
@@ -96,7 +96,7 @@ function TodoList() {
                 onChange={() => handleToggleTask(index)}
                 className="mr-2"
               />
-              <span className={`${task.completed ? 'line-through text-gray-400' : 'text-[var(--text-color)]'}`}>
+              <span className={`${task.completed ? 'line-through text-gray-400' : 'text-[var(--text-black)]'}`}>
                 {task.text}
               </span>
             </div>
@@ -110,11 +110,11 @@ function TodoList() {
             placeholder="Add a task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            className="flex-grow p-1 border border-gray-300 rounded-l-md text-[var(--text-color)] placeholder-[var(--text-color)] mr-2"
+            className="flex-grow p-1 border border-gray-300 rounded-l-md text-[var(--text-black)] placeholder-[var(--text-color)] mr-2"
           />
           <button
             onClick={handleAddTask}
-            className="bg-[#3DA35D] text-white px-3 py-1 rounded-r-md text-lg"
+            className="bg-[var(--brand-secondary)] text-white px-3 py-1 rounded-r-md text-lg"
           >
             +
           </button>
