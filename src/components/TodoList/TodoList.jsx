@@ -63,29 +63,31 @@ function TodoList() {
     <div className="blockContent p-0 w-[300px] mr-5">
       {/* Green Tab including title + date */}
       <div className="blockTitle flex flex-col items-center p-2">
-        <div className="font-semibold">Todo List</div>
-        <div className="flex items-center justify-center mt-2">
-          <button
-            onClick={handlePreviousDate}
-            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
-          >
-            &#8592;
-          </button>
-          <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
-            {formattedDate}
-          </div>
-          <button
-            onClick={handleNextDate}
-            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
-          >
-            &#8594;
-          </button>
-        </div>
+         <h3 className='blockTitle w-50 p-2 '>Todo Lists</h3>
       </div>
 
       {/* White Body */}
       <div className="bg-[var(--component-bg)] p-4 rounded-b-lg">
-        {/* Task List */}
+        {/* Row with arrows and date */}
+        <div className="flex items-center justify-center mb-4">
+            <button
+            onClick={handlePreviousDate}
+            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            >
+            &#8592;
+            </button>
+
+            <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
+            {formattedDate}
+            </div>
+
+            <button
+            onClick={handleNextDate}
+            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            >
+            &#8594;
+            </button>
+        </div>
         <div className="todo-tasks">
           {tasks.map((task, index) => (
             <div key={index} className="flex items-center mb-2">
