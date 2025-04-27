@@ -13,13 +13,30 @@
   }
   
   input[type="checkbox"] {
-    width: 16px;
-    height: 16px;
-    accent-color: var(--brand-primary); 
-    margin-right: 8px; 
     appearance: none;
     -webkit-appearance: none;
-    background-color: var(--text-black);
+    width: 18px;
+    height: 18px;
+    background-color: var(--checkbox-bg);
+    border: 2px solid var(--text-color);
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  [data-theme="dark"] input[type="checkbox"] {
+    background-color: var(--component-bg);
+    border: 2px solid var(--text-color);
+  }
+  
+  /* Custom tick */
+  input[type="checkbox"]:checked::after {
+    content: '✓';
+    font-size: 14px;
+    color: var(--brand-primary);
+    position: absolute;
+    top: 1px;
+    left: 4px;
   }
   
   

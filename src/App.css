@@ -12,6 +12,7 @@
   --text-black: #000000;
   --list-bg: #FFFFFF;
   --sidebar-bg: #3DA35D;
+  --checkbox-bg: white;
 }
 
 [data-theme="dark"] {
@@ -24,6 +25,7 @@
   --text-black: #ffffff;
   --list-bg: #393B3B;
   --sidebar-bg: #004F39;
+  --checkbox-bg: black;
 }
 
 #root {
