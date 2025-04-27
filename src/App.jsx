@@ -45,9 +45,11 @@ function Login () {
           <>
           <div className='container'>
             <TopBar userEmailComponent={usersemail}/>
-            <ClassSchedule userEmail={usersemail}/>
-            <div className='flex flex-nowrap items-start gap-x-8'>
+            <div className='flex flex-nowrap items-start gap-x-17'>
               <TodoList />
+              <ClassSchedule userEmail={usersemail}/>
+            </div>
+            <div className='flex flex-nowrap items-start gap-x-8'>
               <RelatedEvents />
               <QuickLinks /> 
             </div>

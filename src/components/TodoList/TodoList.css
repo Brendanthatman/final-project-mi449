@@ -51,7 +51,7 @@
     background-color: var(--brand-secondary);
     color: white;
     padding: 4px 12px; /* smaller padding */
-    border-radius: 0px 6px 6px 0px; /* only right side rounded */
+    border-radius: 4px; /* smaller border radius */
     font-size: 1.125rem; /* text-lg */
     font-weight: 600;
     transition: background-color 0.3s;

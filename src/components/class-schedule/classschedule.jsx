@@ -48,7 +48,7 @@ function ClassSchedule ({ userEmail }) {
     }, [selectedDayIndex, userEmail]);
   
     return (
-      <div className='my-5'> 
+      <div className='my-5 w-full'> 
         <h3 className="blockTitle w-60 p-2">Today's Classes</h3>
         <div className="blockContent p-5 text-base text-left">
           <div className='flex flex-row justify-evenly'>

@@ -71,18 +71,20 @@ function TodoList() {
         <div className="flex items-center justify-center mb-4">
             <button
             onClick={handlePreviousDate}
-            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            style={{ backgroundColor: 'var(--brand-secondary)' }}
+            className="text-white rounded-sm w-6 h-6 flex items-center justify-center mx-2 text-sm"
             >
             &#8592;
             </button>
 
-            <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
+            <div className="bg-[var(--brand-secondary)] text-white rounded-sm px-4 py-1 text-xs font-semibold w-full">
             {formattedDate}
             </div>
 
             <button
             onClick={handleNextDate}
-            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            style={{ backgroundColor: 'var(--brand-secondary)' }}
+            className="text-white rounded-sm w-6 h-6 flex items-center justify-center mx-2 text-sm"
             >
             &#8594;
             </button>
@@ -104,7 +106,7 @@ function TodoList() {
         </div>
 
         {/* Add New Task */}
-        <div className="flex mt-4">
+        <div className="flex mt-4 items-center">
           <input
             type="text"
             placeholder="Add a task"
@@ -114,7 +116,8 @@ function TodoList() {
           />
           <button
             onClick={handleAddTask}
-            className="bg-[var(--brand-secondary)] text-white w-10 h-9 rounded-r-md flex items-center justify-center text-lg"
+            style={{ backgroundColor: 'var(--brand-secondary)' }}
+            className="text-white w-7 h-7 rounded-r-md flex items-center justify-center text-lg"
           >
             +
           </button>
