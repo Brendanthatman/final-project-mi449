@@ -114,7 +114,7 @@ function TodoList() {
           />
           <button
             onClick={handleAddTask}
-            className="bg-[var(--brand-secondary)] text-white px-3 py-1 rounded-r-md text-lg"
+            className="bg-[var(--brand-secondary)] text-white w-10 h-9 rounded-r-md flex items-center justify-center text-lg"
           >
             +
           </button>
