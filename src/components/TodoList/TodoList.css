@@ -21,12 +21,12 @@
     border: 2px solid var(--text-color);
     border-radius: 4px;
     display: flex;
-    align-items: center;    /* Center the checkmark vertically */
-    justify-content: center; /* Center the checkmark horizontally */
+    align-items: center;    
+    justify-content: center; 
     margin-right: 6px;
     cursor: pointer;
-    font-size: 14px; /* make the ✓ big enough */
-    color: var(--text-black); /* text color for the ✓ */
+    font-size: 14px; 
+    color: var(--text-black); 
   }
   
   [data-theme="dark"] input[type="checkbox"] {
@@ -34,31 +34,30 @@
     border: 2px solid var(--text-color);
   }
   
-  /* Custom tick */
+
   input[type="checkbox"]:checked::after {
     content: '✓';
     font-weight: bold;
-    font-size: 14px; /* size of the tick */
+    font-size: 14px; 
   }
   
   input[type="text"] {
-    height: 25px; /* or whatever height you want */
-    padding: 0 12px; /* left/right padding */
+    height: 25px; 
+    padding: 0 12px;
     font-size: 14px;
   }
   
   .todo-add-button {
     background-color: var(--brand-secondary);
     color: white;
-    padding: 4px 12px; /* smaller padding */
-    border-radius: 4px; /* smaller border radius */
-    font-size: 1.125rem; /* text-lg */
+    padding: 4px 12px; 
+    border-radius: 4px; 
+    font-size: 1.125rem; 
     font-weight: 600;
     transition: background-color 0.3s;
   }
   
-  /* Optional: hover effect */
   .todo-add-button:hover {
-    background-color: #349C55; /* slightly lighter green on hover */
+    background-color: #349C55; 
   }
   

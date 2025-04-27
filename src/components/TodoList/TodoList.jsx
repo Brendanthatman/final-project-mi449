@@ -2,21 +2,20 @@ import React, { useState, useEffect } from 'react';
 import './TodoList.css';
 
 function TodoList() {
-  // Real calendar date handling
+
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [tasks, setTasks] = useState([]);
   const [newTask, setNewTask] = useState('');
 
-  // Format date nicely for UI (ex: Apr 26)
+
   const formattedDate = selectedDate.toLocaleDateString('en-US', {
     month: 'short',
     day: 'numeric',
   });
 
-  // Storage key based on real date (ex: tasks-2025-04-26)
+
   const storageKey = `tasks-${selectedDate.toISOString().split('T')[0]}`;
 
-  // Load tasks when selectedDate changes
   useEffect(() => {
     const storedTasks = localStorage.getItem(storageKey);
     if (storedTasks) {
@@ -26,12 +25,12 @@ function TodoList() {
     }
   }, [selectedDate]);
 
-  // Save tasks whenever tasks or selectedDate change
+
   useEffect(() => {
     localStorage.setItem(storageKey, JSON.stringify(tasks));
   }, [tasks, selectedDate]);
 
-  // Functions to move to previous and next dates
+
   const handlePreviousDate = () => {
     const prevDate = new Date(selectedDate);
     prevDate.setDate(prevDate.getDate() - 1);
@@ -44,14 +43,12 @@ function TodoList() {
     setSelectedDate(nextDate);
   };
 
-  // Add a new task
   const handleAddTask = () => {
     if (newTask.trim() === '') return;
     setTasks([...tasks, { text: newTask, completed: false }]);
     setNewTask('');
   };
 
-  // Toggle task complete/incomplete
   const handleToggleTask = (index) => {
     const updatedTasks = tasks.map((task, idx) =>
       idx === index ? { ...task, completed: !task.completed } : task
