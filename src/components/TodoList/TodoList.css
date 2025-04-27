@@ -42,18 +42,18 @@
   }
   
   input[type="text"] {
-    height: 36px; /* or whatever height you want */
+    height: 25px; /* or whatever height you want */
     padding: 0 12px; /* left/right padding */
     font-size: 14px;
   }
   
-  button {
-    height: 36px; /* match input height */
-    width: 40px; /* you can adjust width separately if you want wider or narrower */
+  /* button {
+    height: 25px; 
+    width: 40px; 
     font-size: 20px;
     display: flex;
     align-items: center;
     justify-content: center;
     background-color: var(--brand-secondary);
   }
-  
+   */
