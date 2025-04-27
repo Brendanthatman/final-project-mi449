@@ -60,11 +60,10 @@ function TodoList() {
   };
 
   return (
-    <div className="blockContent p-0 w-[300px] mr-5">
+    <div className="my-5">
       {/* Green Tab including title + date */}
-      <div className="blockTitle flex flex-col items-center p-2">
-         <h3 className='blockTitle w-50 p-2 '>Todo Lists</h3>
-      </div>
+       <h3 className='blockTitle w-50 p-2 '>Todo Lists</h3>
+
 
       {/* White Body */}
       <div className="bg-[var(--component-bg)] p-4 rounded-b-lg">
