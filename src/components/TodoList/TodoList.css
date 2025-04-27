@@ -15,13 +15,18 @@
   input[type="checkbox"] {
     appearance: none;
     -webkit-appearance: none;
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     background-color: var(--checkbox-bg);
     border: 2px solid var(--text-color);
     border-radius: 4px;
-    position: relative;
+    display: flex;
+    align-items: center;    /* Center the checkmark vertically */
+    justify-content: center; /* Center the checkmark horizontally */
+    margin-right: 6px;
     cursor: pointer;
+    font-size: 14px; /* make the ✓ big enough */
+    color: var(--text-black); /* text color for the ✓ */
   }
   
   [data-theme="dark"] input[type="checkbox"] {
@@ -32,11 +37,7 @@
   /* Custom tick */
   input[type="checkbox"]:checked::after {
     content: '✓';
-    font-size: 14px;
-    color: var(--brand-primary);
-    position: absolute;
-    top: 1px;
-    left: 4px;
+    font-weight: bold;
+    font-size: 14px; /* size of the tick */
   }
-  
   
