@@ -47,13 +47,18 @@
     font-size: 14px;
   }
   
-  /* button {
-    height: 25px; 
-    width: 40px; 
-    font-size: 20px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  .todo-add-button {
     background-color: var(--brand-secondary);
+    color: white;
+    padding: 4px 12px; /* smaller padding */
+    border-radius: 0px 6px 6px 0px; /* only right side rounded */
+    font-size: 1.125rem; /* text-lg */
+    font-weight: 600;
+    transition: background-color 0.3s;
   }
-   */
+  
+  /* Optional: hover effect */
+  .todo-add-button:hover {
+    background-color: #349C55; /* slightly lighter green on hover */
+  }
+  
