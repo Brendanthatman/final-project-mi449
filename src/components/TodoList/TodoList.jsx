@@ -66,7 +66,7 @@ function TodoList() {
 
 
       {/* White Body */}
-      <div className="blockContent p-5 w-2xs">
+      <div className="blockContent p-5 w-2xs pb-6">
         {/* Row with arrows and date */}
         <div className="flex items-center justify-center mb-4">
             <button
@@ -76,13 +76,13 @@ function TodoList() {
             &#8592;
             </button>
 
-            <div className="bg-[var(--brand-secondary)] text-white rounded-full px-4 py-1 text-xs font-semibold">
+            <div className="bg-[#3DA35D] text-white rounded-full px-4 py-1 text-xs font-semibold">
             {formattedDate}
             </div>
 
             <button
             onClick={handleNextDate}
-            className="bg-[var(--brand-secondary)] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
+            className="bg-[#3DA35D] text-white rounded-full w-6 h-6 flex items-center justify-center mx-2 text-sm"
             >
             &#8594;
             </button>
@@ -110,11 +110,11 @@ function TodoList() {
             placeholder="Add a task"
             value={newTask}
             onChange={(e) => setNewTask(e.target.value)}
-            className="flex-grow p-2 border border-gray-300 rounded-l-md text-[var(--text-color)] placeholder-[var(--text-color)]"
+            className="flex-grow p-1 border border-gray-300 rounded-l-md text-[var(--text-color)] placeholder-[var(--text-color)] mr-2"
           />
           <button
             onClick={handleAddTask}
-            className="bg-[var(--brand-secondary)] text-white px-4 py-2 rounded-r-md text-lg"
+            className="bg-[#3DA35D] text-white px-3 py-1 rounded-r-md text-lg"
           >
             +
           </button>
